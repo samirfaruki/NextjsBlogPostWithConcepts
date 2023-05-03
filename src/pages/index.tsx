@@ -16,30 +16,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <nav className={styles.mainNav}>
-        <ul>
-          <li>
-            <Link href="/" legacyBehavior>
-              <a>Home</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/about" legacyBehavior>
-              <a>About</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/blogpost/heeelllloooo" legacyBehavior>
-              <a>Blog</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/contact" legacyBehavior>
-              <a>contact</a>
-            </Link>
-          </li>
-        </ul>
-      </nav>
+     
       <div className={styles.titleHOne}>
         <h1>Hunting Coder</h1>
       </div>
