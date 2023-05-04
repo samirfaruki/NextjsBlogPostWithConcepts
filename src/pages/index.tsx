@@ -31,37 +31,8 @@ export default function Home() {
           placeholder="blur" // Optional blur-up while loading
         />
       </div>
-      <div className={styles.mainBlog}>
-        <h2>This is my blog page</h2>
-        <div>
-          <h3>How to learn javascript in 2022</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos
-            commodi eum corporis illum beatae.
-          </p>
-        </div>
-        <div>
-          <h3>How to learn javascript in 2022</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos
-            commodi eum corporis illum beatae.
-          </p>
-        </div>
-        <div>
-          <h3>How to learn javascript in 2022</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos
-            commodi eum corporis illum beatae.
-          </p>
-        </div>
-        <div>
-          <h3>How to learn javascript in 2022</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos
-            commodi eum corporis illum beatae.
-          </p>
-        </div>
-      </div>
+     
+    
     </>
   );
 }

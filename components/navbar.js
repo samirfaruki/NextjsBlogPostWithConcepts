@@ -20,6 +20,11 @@ const Navbar = () => {
           </li>
           <li>
             <Link href="/blogpost/heeelllloooo" legacyBehavior>
+              <a>blog post</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/blog" legacyBehavior>
               <a>Blog</a>
             </Link>
           </li>
