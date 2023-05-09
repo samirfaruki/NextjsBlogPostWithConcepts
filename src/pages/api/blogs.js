@@ -7,10 +7,18 @@ export default async function handler(req, res) {
     for (let index = 0; index < result.length; index++) {
       const filename = result[index];
       const filePath = `blogdata/${filename}`; // assuming files are in the blogdata directory
-      const fileContent = await fs.promises.readFile(filePath, "utf-8");
+      let fileContent = await fs.promises.readFile(filePath, "utf-8");
+      fileContent = JSON.parse(fileContent);
+      let title, content, slug;
+      fileContent.map((data) => {
+        title = data.title;
+        content = data.content;
+        slug = data.slug
+      })
       const blogObject = {
-        filename: filename,
-        content: fileContent,
+        title,
+        content,
+        slug
       };
       allBlogs.push(blogObject);
     }
