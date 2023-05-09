@@ -1,46 +1,35 @@
 import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
 import Link from "next/link";
 import styles from "@/styles/Blog.module.css";
 
+function Blogs() {
+  const [blogs, setBlogs] = useState([]);
 
-const Blog = () => {
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch("/api/blogs");
+      const data = await response.json();
+      setBlogs(data);
+    }
+    fetchData();
+  }, []);
+
   return (
-    <div className={styles.mainBlog}>
-      <h2>This is my blog page</h2>
-      <div className={styles.blogItems}>
-        <h3>
-          <Link href="/blogpost/learn java script">
-            How to learn javascript in 2022
-          </Link>
-        </h3>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos commodi
-          eum corporis illum beatae.
-        </p>
-      </div>
-      <div>
-        <h3>How to learn javascript in 2022</h3>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos commodi
-          eum corporis illum beatae.
-        </p>
-      </div>
-      <div>
-        <h3>How to learn javascript in 2022</h3>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos commodi
-          eum corporis illum beatae.
-        </p>
-      </div>
-      <div>
-        <h3>How to learn javascript in 2022</h3>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos commodi
-          eum corporis illum beatae.
-        </p>
-      </div>
+    <div>
+      {blogs.map((blog) => (
+        <div key={blog.title} className={styles.mainBlog}>
+          <h2>
+            <Link href={`api/getBlogPost/${blog.filename}`} legacyBehavior>
+              <a>{blog.filename}</a>
+            </Link>
+          </h2>
+          <p>{blog.content}</p>
+        </div>
+      ))}
     </div>
   );
-};
+}
 
-export default Blog;
+export default Blogs;
